@@ -2,7 +2,7 @@
 
 📅 프로젝트 정보
 
-* 진행 기간: 2026.04.21 ~ 2026.05.08
+* 진행 기간: 2026.04.21 ~ 2026.05.07
 * 설계 및 검증 대상: `SPI Master IP`, `I2C Master IP` (AXI4-Lite 인터페이스 기반)
 * 기술 스택: `SystemVerilog`, `Vivado XSim`, `UVM`, `C (MicroBlaze / Vitis)`, `Xilinx Vivado Block Design`
 
