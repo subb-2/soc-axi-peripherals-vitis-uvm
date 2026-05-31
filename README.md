@@ -72,17 +72,7 @@ MicroBlaze C 코드를 3계층으로 분리하여 하드웨어 의존성을 낮�
 
 ### I2C + AXI Block Diagram
 
-```
-  MicroBlaze          AXI Slave                         I2C Master    I2C Slave
-  ┌────────┐   ┌───────────────────────────────┐   ┌──────────────┐  ┌──────────┐
-  │   AW ◄─┼──►│ 0x00 [cmd_stop|cmd_read|      │   │ cmd_start    │  │          │
-  │    W ◄─┼──►│       cmd_write|cmd_start]    │──►│ cmd_write    │  │   SCL    │
-  │    B ◄─┼──►│ 0x04 [ack_in|tx_data[7:0]]   │──►│ cmd_read     │  │          │
-  │   AR ◄─┼──►│ 0x08 [done|busy|ack_out|      │──►│ cmd_stop     │  │   SDA    │
-  │    R ◄─┼──►│       rx_data[7:0]]           │◄──│ rx_data      │  └──────────┘
-  └────────┘   │ 0x0c                          │◄──│ ack_out/busy │
-               └───────────────────────────────┘   └──────────────┘
-```
+<img width="1689" height="801" alt="Image" src="https://github.com/user-attachments/assets/a59f408f-7da0-4140-ab24-69fb295868f6" />
 
 ---
 
