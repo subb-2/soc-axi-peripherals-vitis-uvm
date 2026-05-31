@@ -68,11 +68,11 @@ MicroBlaze C 코드를 3계층으로 분리하여 하드웨어 의존성을 낮�
 
 ### SPI + AXI Block Diagram
 
-<img width="1679" height="795" alt="Image" src="https://github.com/user-attachments/assets/ba8ed9e6-6c2f-4972-977e-d8975ded8c9e" />
+<img width="900" alt="Image" src="https://github.com/user-attachments/assets/ba8ed9e6-6c2f-4972-977e-d8975ded8c9e" />
 
 ### I2C + AXI Block Diagram
 
-<img width="1689" height="801" alt="Image" src="https://github.com/user-attachments/assets/a59f408f-7da0-4140-ab24-69fb295868f6" />
+<img width="900" alt="Image" src="https://github.com/user-attachments/assets/a59f408f-7da0-4140-ab24-69fb295868f6" />
 
 ---
 
