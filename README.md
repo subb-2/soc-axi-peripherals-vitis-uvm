@@ -145,6 +145,11 @@ void I2C_CMD_START(I2C_Typedef_t *I2Cx) {
 
 ## ✅ 검증 결과
 
+<table>
+<tr>
+
+<td width="49%">
+
 **SPI UVM 검증**
 
 | 항목 | 결과 |
@@ -156,6 +161,13 @@ void I2C_CMD_START(I2C_Typedef_t *I2Cx) {
 | Scoreboard PASS | **2,560** |
 | Scoreboard FAIL | **0** |
 
+</td>
+
+<td width="2%">
+</td>
+
+<td width="49%">
+
 **실보드 통신 검증 (Basys3 2보드)**
 
 | 프로토콜 | 방향 | 결과 |
@@ -164,6 +176,11 @@ void I2C_CMD_START(I2C_Typedef_t *I2Cx) {
 | SPI | Slave → Master Read | ✅ PASS |
 | I2C | Master → Slave Write | ✅ PASS |
 | I2C | Master ← Slave Read | ✅ PASS |
+
+</td>
+
+</tr>
+</table>
 
 ---
 
