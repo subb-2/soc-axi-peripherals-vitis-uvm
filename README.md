@@ -62,6 +62,8 @@ MicroBlaze C 코드를 3계층으로 분리하여 하드웨어 의존성을 낮�
 * **검증 시나리오 2**: Slave가 MISO로 송신한 값 == SPI 통신을 통해 Read 채널로 수신된 값.
 * **Coverage**: `cp_tx_data_m` / `cp_tx_data_s` 각 21개 빈 정의. 주요 빈: `0x55`(alt_01), `0xAA`(alt_10), `0x01`(lsb_only), `0x80`(msb_only), `0x00`(zero), range0~rangef.
 
+<img width="500" alt="Image" src="https://github.com/user-attachments/assets/76556fce-6c91-4aab-b10e-b792f2c1f3bc" />
+
 ---
 
 ## 🏗️ 시스템 구조
