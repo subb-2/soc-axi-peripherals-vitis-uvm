@@ -78,11 +78,32 @@ MicroBlaze C 코드를 3계층으로 분리하여 하드웨어 의존성을 낮�
 
 ## 🚀 문제 해결 (Troubleshooting)
 
-### 1. I2C Done 신호 포착 문제
+#### 1. Done 신호 대신 Busy 신호로 완료 판단
 
-* **문제**: I2C 명령어 처리 완료 시점을 소프트웨어에서 정확히 감지하지 못해 다음 명령어가 중복 실행됨.
-* **원인**: SPI는 `busy` 신호 폴링으로 완료를 판단할 수 있었으나, I2C IP는 `done` 신호가 다음 명령어 쓰기 시점까지 Level로 유지되는 특성이 있었음.
-* **해결**: `done` 신호 확인 직후 COMMAND 레지스터를 `0x00`으로 클리어하여 명시적으로 1클럭 펄스를 처리.
+- **문제**: SPI 데이터 처리 완료 시점을 `done` 신호 폴링으로 완료를 감지하려 했으나 신호를 놓치는 경우 발생.
+- **원인**: SPI IP의 `done` 신호가 1클럭 펄스로만 발생하여 C 코드의 폴링 루프가 이를 놓침.
+- **해결**: `busy` 신호가 전송 중에만 HIGH를 유지하는 특성을 이용하여 `while (busy == 0)` 폴링으로 변경.
+
+#### 2. I2C의 Done 신호 포착 문제
+
+- **문제**: I2C 명령어 처리 완료 시점을 `done` 신호 폴링으로 완료를 감지하려 했으나 신호를 놓치는 경우 발생. 다음 명령어가 실행되지 않음.
+- **원인**: I2C IP의 `done` 신호가 1클럭 펄스로만 발생하여 C 코드의 폴링 루프가 이를 놓침.
+- **해결**: FPGA 측 AXI Wrapper에 `done_real` 래치 레지스터를 추가하여 `done` 펄스를 유지시키고, 소프트웨어에서 확인 후 COMMAND 레지스터를 `0x00`으로 클리어하여 명시적으로 처리.
+
+```systemverilog
+// AXI Wrapper 내 done_real 래치
+reg done_real;
+always @(posedge S_AXI_ACLK) begin
+    if (S_AXI_ARESETN == 1'b0)
+        done_real <= 1'b0;
+    else begin
+        if (done)
+            done_real <= 1'b1;
+        else if (slv_reg_wren && (axi_awaddr[...] == 2'h0))
+            done_real <= 1'b0;  // COMMAND 레지스터 쓰기 시 클리어
+    end
+end
+```
 
 ```c
 void I2C_CMD_START(I2C_Typedef_t *I2Cx) {
