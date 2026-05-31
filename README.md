@@ -148,7 +148,7 @@ void I2C_CMD_START(I2C_Typedef_t *I2Cx) {
 <table>
 <tr>
 
-<td width="49%">
+<td width="45%">
 
 **SPI UVM 검증**
 
@@ -163,10 +163,10 @@ void I2C_CMD_START(I2C_Typedef_t *I2Cx) {
 
 </td>
 
-<td width="2%">
+<td width="10%">
 </td>
 
-<td width="49%">
+<td width="45%">
 
 **실보드 통신 검증 (Basys3 2보드)**
 
