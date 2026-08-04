@@ -14,6 +14,14 @@ AXI4-Lite 인터페이스를 통해 CPU(MicroBlaze)가 레지스터를 제어하
 단순 IP 동작 구현을 넘어, **Vivado Block Design을 활용한 MicroBlaze SoC 구성**, **C 코드로 레지스터를 직접 제어하는 소프트웨어 스택 설계**, 그리고 **2개의 Basys3 보드 간 실제 Write / Read 통신 구현**까지 하드웨어-소프트웨어 통합 관점에서 프로젝트를 진행하였습니다.  
 SPI IP에 대해서는 UVM 검증 환경을 구축하여 Coverage 100%를 달성하였습니다.
 
+### Demo Video - SPI
+
+https://github.com/user-attachments/assets/ab84f7cf-b22c-4739-bcce-1653732f37ad
+
+### Demo Video - I2C
+
+
+
 ---
 
 ## 🔑 주요 구현 내용
