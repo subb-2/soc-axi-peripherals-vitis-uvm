@@ -16,7 +16,7 @@ SPI IP에 대해서는 UVM 검증 환경을 구축하여 Coverage 100%를 달성
 
 ### 🎥 Demo Video - SPI
 <video src="https://github.com/user-attachments/assets/ab84f7cf-b22c-4739-bcce-1653732f37ad"
-       width="400"
+       width="100"
        controls>
 </video>
 
