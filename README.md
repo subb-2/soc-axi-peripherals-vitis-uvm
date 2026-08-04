@@ -20,7 +20,7 @@ https://github.com/user-attachments/assets/ab84f7cf-b22c-4739-bcce-1653732f37ad
 
 ### Demo Video - I2C
 
-
+https://github.com/user-attachments/assets/b7b43d35-ceff-4916-a216-cf21b8fe9277
 
 ---
 
