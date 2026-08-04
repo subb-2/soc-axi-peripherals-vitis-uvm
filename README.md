@@ -15,13 +15,13 @@ AXI4-Lite 인터페이스를 통해 CPU(MicroBlaze)가 레지스터를 제어하
 SPI IP에 대해서는 UVM 검증 환경을 구축하여 Coverage 100%를 달성하였습니다.
 
 ### 🎥 Demo Video - SPI
-<video src="[https://github.com/user-attachments/assets/ab84f7cf-b22c-4739-bcce-1653732f37ad]"
+<video src="https://github.com/user-attachments/assets/ab84f7cf-b22c-4739-bcce-1653732f37ad"
        width="600"
        controls>
 </video>
 
 ### 🎥 Demo Video - I2C
-<video src="[https://github.com/user-attachments/assets/b7b43d35-ceff-4916-a216-cf21b8fe9277]"
+<video src="https://github.com/user-attachments/assets/b7b43d35-ceff-4916-a216-cf21b8fe9277"
        width="600"
        controls>
 </video>
